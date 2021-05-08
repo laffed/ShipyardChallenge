@@ -2,9 +2,11 @@ import {IConfig, IOnInitialize, IAction, IOperator, IState} from 'overmind';
 import {createHook} from 'overmind-react';
 import {namespaced} from 'overmind/config';
 import * as user from './user';
+import * as remote from './remote';
 
 export const config = namespaced({
   user,
+  remote
 });
 
 export interface Config extends IConfig<{
