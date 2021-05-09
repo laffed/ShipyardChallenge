@@ -1,6 +1,7 @@
 import {UserObj} from '@types';
 
-export type ApiResponseT = UserObj[];
+export type Data = UserObj[] | UserObj | null;
+export type ApiResponseT = {success: boolean; data: Data};
 
 export type AxiosResponse = {
   config: {
@@ -11,15 +12,14 @@ export type AxiosResponse = {
   };
   request: XMLHttpRequest;
   response: {
-    data: ApiResponseT;
+    data: Data;
     headers: object;
     status: number;
     statusText: string;
   };
   isAxiosError: boolean;
   toJSON: Function;
-  data: ApiResponseT;
-  token: ApiResponseT;
+  data: Data;
 }
 
 export type ApiResponse = {
@@ -27,5 +27,5 @@ export type ApiResponse = {
   error: string;
   token: string;
   hasLoggedIn: boolean;
-  data: ApiResponseT;
+  data: Data;
 }

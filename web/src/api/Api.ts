@@ -79,7 +79,7 @@ class API {
    * @param response - The Axios response
    */
   static handleSuccess(res: AxiosResponse) {
-    return res.data;
+    return {success: true, data: res.data};
   }
 
   /**
@@ -87,8 +87,7 @@ class API {
    * @param error - the error that was caught
    */
   static handleError(err: any): any {
-    const error: AxiosResponse = {...err};
-    return error;
+    return {success: false, data: null};
   }
 }
 
