@@ -20,3 +20,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.link {
+  cursor: pointer;
+}

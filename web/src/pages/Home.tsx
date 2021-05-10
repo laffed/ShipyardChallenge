@@ -1,7 +1,7 @@
-import React, {useState, useEffect, MouseEvent} from 'react'
+import React, {useState, useEffect, useCallback, MouseEvent} from 'react'
 import {useOvermind} from '@state';
 import {useHistory} from 'react-router-dom';
-import {Table, Space} from 'antd';
+import {Table} from 'antd';
 import {UserObj} from '@types';
 const {Column} = Table;
 
@@ -53,15 +53,17 @@ export default function Home() {
     <div>
       <Table
         dataSource={userArr}
-        onRow={(record, rowIndex) => {
-          return {
-            onClick: e => handleClick(e, record)
-          }
-        }}
+        rowKey='id'
       >
-        <Column title="Email" dataIndex="email" key="email" />
-        <Column title="First Name" dataIndex="first_name" key="firstName" />
-        <Column title="Last Name" dataIndex="last_name" key="lastName" />
+        <Column title="Email" dataIndex="email" key="email"
+          render={(email: string, record: UserObj) => {
+            return (
+              <td className='ant-table-cell link' onClick={e => handleClick(e, record)}>{email}</td>
+            );
+          }}
+        />
+        <Column title="First Name" dataIndex="first_name" key="first_name" />
+        <Column title="Last Name" dataIndex="last_name" key="last_name" />
       </Table>
     </div>
   );

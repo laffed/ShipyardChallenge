@@ -1,16 +1,18 @@
 import React from 'react';
 import './App.css';
+import 'antd/dist/antd.css';
 import {Routes} from './routes';
 import {Provider} from 'overmind-react';
 import {createOvermind} from 'overmind';
 import {Router} from 'react-router';
-import {createBrowserHistory} from 'history';
+import {createBrowserHistory, History} from 'history';
 import {config} from '@state';
 
-const history = createBrowserHistory();
-const overmind = createOvermind(config, {
-  devtools: '192.168.1.66:3031'
-})
+const history: History = createBrowserHistory();
+const overmind = createOvermind(config
+  // Uncomment for development
+  // , { devtools: '192.168.1.66:3031' }
+);
 
 function App() {
   return (
