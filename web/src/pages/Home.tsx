@@ -9,7 +9,7 @@ export default function Home() {
   const userArr = useOvermind().state.user;
   const {getUsersData} = useOvermind().actions.user;
   const {setPending} = useOvermind().actions.remote;
-  const isLoading = useOvermind().state.remote;
+  const {pending} = useOvermind().state.remote;
   const [err, setErr] = useState<boolean>(false);
   const history = useHistory();
 
@@ -25,7 +25,7 @@ export default function Home() {
     onMount();
   }, []);
 
-  if (isLoading) {
+  if (pending) {
     return (
       <div>
         <h1>Loading...</h1>
