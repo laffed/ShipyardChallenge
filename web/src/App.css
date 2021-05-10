@@ -23,4 +23,6 @@ body {
 
 .link {
   cursor: pointer;
+  color: #2f6fef;
+  font-weight: bolder;
 }

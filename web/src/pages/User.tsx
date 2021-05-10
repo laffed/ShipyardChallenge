@@ -40,7 +40,7 @@ export default function User() {
     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
       <Card
         title={`${data.first_name} ${data.last_name}`}
-        style={{width: 500}}
+        style={{width: 500, fontWeight: 'bolder'}}
       >
         <h3>{`Email:  ${data.email}`}</h3>
         <h3>{`Favorite Color:  ${data.favorite_color}`}</h3>

@@ -25,7 +25,10 @@ export default function Home() {
     onMount();
   }, []);
 
-
+  const handleClick = (e: MouseEvent, user: UserObj) => {
+    e.preventDefault();
+    history.push(`/user/${user.id}`);
+  }
 
   if (pending) {
     return (
@@ -43,11 +46,7 @@ export default function Home() {
     );
   }
 
-  const handleClick = (e: MouseEvent, user: UserObj) => {
-    e.preventDefault();
-    setPending(true);
-    history.push(`/user/${user.id}`);
-  }
+
 
   return (
     <div>
