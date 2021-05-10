@@ -44,7 +44,7 @@ export default function User() {
       >
         <h3>{`Email:  ${data.email}`}</h3>
         <h3>{`Favorite Color:  ${data.favorite_color}`}</h3>
-        <h3>{data.number_of_pets > 0 ? `Parent to ${data.number_of_pets} pet` : `${data.first_name} doesn't own any pets`}</h3>
+        <h3>{data.number_of_pets > 0 ? `Parent to ${data.number_of_pets} pet(s)` : `${data.first_name} doesn't have any pets`}</h3>
       </Card>
     </div>
   );
