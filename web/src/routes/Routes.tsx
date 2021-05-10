@@ -8,6 +8,7 @@ export default function Routes() {
     <Switch>
       <Route exact path='/' component={Home} />
       <Route path='/user/:userId' component={User} />
+      <Route exact path='/404' component={NotFound} />
       <Route path='*' component={NotFound} />
     </Switch>
   );
