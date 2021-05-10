@@ -77,6 +77,14 @@ func sendError(w http.ResponseWriter, err error, status int) {
 var users = []User{
 	{
 		ID:            mustID(),
+		FirstName:     "👻 John",
+		LastName:      "Kangsumrith",
+		Email:         "roarklaffed@gmail.com",
+		FavoriteColor: "the darkness of the night",
+		NumberOfPets:  3,
+	},
+	{
+		ID:            mustID(),
 		FirstName:     "Abe",
 		LastName:      "Lincoln",
 		Email:         "pres16@unitedstates.com",
