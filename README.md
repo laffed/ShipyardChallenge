@@ -10,14 +10,14 @@ go run app/main.go
 ```
 
 ### Client
-In /web dir:
+In the /web dir:
 ```
 yarn install
 //run React App on localhost:8080
 yarn start
 ```
 
-## Considerations 
+# Considerations 
 
 Redux has been replaced by Overmind. Redux is not necessary in this usecase (and most usecases) where a light weight state manager will do just fine.
 
