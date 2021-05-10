@@ -4,6 +4,7 @@ body {
 
 .App {
   height: 100vh;
+  width: 100vw;
   background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
@@ -11,4 +12,11 @@ body {
 
 .parent {}
 
-.content {}
+.top {
+  margin-left: 2em;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}

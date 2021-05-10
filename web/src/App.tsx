@@ -17,7 +17,9 @@ function App() {
     <Provider value={overmind}>
       <div className="App">
         <div className='parent'>
-          <h1>Shipyard</h1>
+          <div className="top">
+            <h1>Shipyard</h1>
+          </div>
         </div>
         <div className="content">
           <Router history={history}>

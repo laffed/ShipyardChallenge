@@ -25,6 +25,8 @@ export default function Home() {
     onMount();
   }, []);
 
+
+
   if (pending) {
     return (
       <div>
@@ -58,8 +60,8 @@ export default function Home() {
         }}
       >
         <Column title="Email" dataIndex="email" key="email" />
-        <Column title="" dataIndex="first_name" key="firstName" />
-        <Column title="Email" dataIndex="last_name" key="lastName" />
+        <Column title="First Name" dataIndex="first_name" key="firstName" />
+        <Column title="Last Name" dataIndex="last_name" key="lastName" />
       </Table>
     </div>
   );

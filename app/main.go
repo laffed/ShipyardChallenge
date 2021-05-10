@@ -13,11 +13,10 @@ import (
 const IndexHTML = `<!doctype html>
 <html>
 	<head>
-		<link rel="stylesheet" href="http://127.0.0.1:8081/assets/stylesheets/app.css" />
 	</head>
 	<body>
 		<div id="main" class="main"></div>
-
+		<h1>Go Server</h1>
 		<script type="text/javascript" src="http://127.0.0.1:8081/assets/javascripts/runtime.js"></script>
 		<script type="text/javascript" src="http://127.0.0.1:8081/assets/javascripts/vendors.js"></script>
 		<script type="text/javascript" src="http://127.0.0.1:8081/assets/javascripts/app.js"></script>
@@ -26,6 +25,8 @@ const IndexHTML = `<!doctype html>
 
 func main() {
 	http.HandleFunc("/api/users/", func(w http.ResponseWriter, r *http.Request) {
+		//allow cors
+		(w).Header().Set("Access-Control-Allow-Origin", "*")
 		if r.URL.Path == "/api/users/" {
 			sendData(w, users, http.StatusOK)
 			return
@@ -52,7 +53,7 @@ func main() {
 		fmt.Fprint(w, IndexHTML)
 	})
 
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8081", nil)
 }
 
 func sendData(w http.ResponseWriter, data interface{}, status int) {
